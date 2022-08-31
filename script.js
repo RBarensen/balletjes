@@ -1,53 +1,47 @@
 
-function setup() {
-  createCanvas(600, 600)
-  ;
+
+
+class Bal{
+  constructor(x,y,w,h,vx,vy,c) {
+    this.x = x;
+    this.y = y;
+    this.width = w;
+    this.height = h;
+    this.vx = vx;
+    this.vy = vy;
+    this.colour = c;
+  }
+  draw(){
+    fill(this.colour)
+    ellipse(this.x,this.y,50,50);
+    this.x = this.x + this.vx;
+    this.y = this.y + this.vy;
+
+    if(this.x < 5 || this.x >= 595){
+      this.vx = this.vx * -1;
+    }
+
+    if(this.y < 5 || this.y >= 595){
+      this.vy = this.vy * -1;
+    }
+  }
 }
 
+var bal1, bal2, bal3;
 
+function setup() {
+  createCanvas(600,600);
+ bal1 = new Bal(10, 300, 30, 30, 4, 3, "red");
 
-  let x = 0
-  let y = 150
-  let v = 4
-  let w = 5
-  let a = 595
-  let b = 0
-  let t = 8
-  let u = 6
-function draw() {
-    background(0)
-    fill(255, 191, 0);
-    ellipse(x, y, 80)
-    fill(0, 255, 255);
-    ellipse(a,b,50)
-    x = x + v
-    y = y + w
-    a = a + t
-    b = b + u
-    if(x>600){
-      v = -4
-    }
-    if(x<0){
-      v = 4
-    }
-    if(y>600){
-      w = -5
-    }
-    if(y<0){
-      w = 5
-    }
-    if(a>600){
-      t = -8
-    }
-    if(a<0){
-      t = 8
-    }
-    if(b>600){
-      u = -6
-    }
-    if(b<0){
-      u=6
-    }
-      
-  } 
+ bal2 = new Bal(590, 50, 70, 70, 2, 4, "brown");
 
+ bal3 = new Bal(300, 590, 20, 20, 6, 6, "blue");
+}
+
+function draw(){
+  background(0);
+
+  bal1.draw();
+  bal2.draw();
+  bal3.draw();
+}
