@@ -1,4 +1,16 @@
-
+class Rectangle{
+  constructor(rx, ry, rw, rh, rc){
+    this.rx = rx
+    this.ry = ry
+    this.rw = rw
+    this.rh = rh
+    this.rc = rc
+  }
+  draw(){
+    fill(this.rc)
+    rect(this.rx, this.ry, this.rw, this.rh);
+  }
+}
 
 
 class Bal{
@@ -54,16 +66,19 @@ function setup() {
  bal3 = new Bal(300, 590, 70, 70, 6, 6, "blue");
 
  bal4 = new Bal(337, 402, 70, 70, 4, 2, "yellow");
+
+rech1 = new Rectangle(300, 300, 60, 60, "white");
 }
 
 function draw(){
   background(0);
 
-  rect(300, 300, 60, 60);
+  
 
 
   bal1.draw();
   bal2.draw();
   bal3.draw();
   bal4.draw();
+  rech1.draw();
 }
