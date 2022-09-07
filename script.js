@@ -27,7 +27,7 @@ class Bal{
   }
 }
 
-var bal1, bal2, bal3;
+var bal1, bal2, bal3, bal4;
 
 function setup() {
   createCanvas(600,600);
@@ -36,6 +36,8 @@ function setup() {
  bal2 = new Bal(590, 50, 70, 70, 2, 4, "brown");
 
  bal3 = new Bal(300, 590, 20, 20, 6, 6, "blue");
+
+ bal4 = new Bal(337, 402, 36, 36, 4, 8, "yellow");
 }
 
 function draw(){
@@ -44,4 +46,5 @@ function draw(){
   bal1.draw();
   bal2.draw();
   bal3.draw();
+  bal4.draw();
 }
